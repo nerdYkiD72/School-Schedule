@@ -1,0 +1,98 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const pageTitle = "About This Project";
+
+const happy = true;
+const finished = false;
+const goal = 3;
+---
+
+<Layout title={pageTitle}>
+  <main>
+    <h1>About this site</h1>
+
+    <h2>Why?</h2>
+    <p>Mainly because I'm bored and I can never remember the damn schedule.</p>
+
+    <h2>How?</h2>
+    <p>
+      I am using astro to build this site. This is my first project using it and
+      Ill see how far I get.
+    </p>
+
+    <h2>Anything else?</h2>
+    <p>
+      Bla bla bla I'm following a tutorial. I have made this idea before
+      actually but this time I am rebuilding it in astrooo.
+    </p>
+
+    <h1>Other things:</h1>
+    <h2>Tests:</h2>
+    {happy && <p>I am happy to be learning Astro!</p>}
+
+    {finished && <p>I finished this tutorial!</p>}
+
+    {
+      goal === 3 ? (
+        <p>My goal is to finish in 3 days.</p>
+      ) : (
+        <p>My goal is not 3 days.</p>
+      )
+    }
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 60ch;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+
+    padding: 1vw;
+    background-color: rgb(201, 115, 35);
+    border-radius: 2rem;
+    text-align: center;
+  }
+  h2 {
+    font-style: italic;
+    color: rgb(88, 178, 238);
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instructions {
+    line-height: 1.6;
+    margin: 1rem 0;
+    border: 1px solid rgba(var(--accent), 25%);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.4rem;
+  }
+  .instructions code {
+    font-size: 0.875em;
+    font-weight: bold;
+    background: rgba(var(--accent), 12%);
+    color: rgb(var(--accent));
+    border-radius: 4px;
+    padding: 0.3em 0.45em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
